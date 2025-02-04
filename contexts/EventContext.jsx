@@ -13,7 +13,7 @@ const EventProvider = ({ children }) => {
   //current filter inputs
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(""); //buraya null koymuş gpt
   const [selectedType, setSelectedType] = useState("");
 
   //apllied filters (after submit)
@@ -21,12 +21,17 @@ const EventProvider = ({ children }) => {
     searchTerm: "",
     selectedLocation: "",
     selectedDate: null,
-    selectedType,
+    selectedType, // buraya : "" koymuş
   });
+
+  // const [currentDate, setCurrentDate] = useState(null);
+  // useEffect(() => {
+  //   setCurrentDate(new Date());
+  // }, []);
 
   //filtered events based on the applied filters
   const filteredEvents = useMemo(() => {
-    // if (!events || events.length === 0) return []; // Eğer veri gelmemişse boş dizi dön
+    //  if (!events || events.length === 0) return []; // Eğer veri gelmemişse boş dizi dön
     const today = new Date();
     return events.filter((event) => {
       //check event date (exclude past events)
@@ -69,7 +74,7 @@ const EventProvider = ({ children }) => {
       try {
         const res = await fetch("http://localhost:4000/events"); //
         if (!res.ok) {
-          throw new Error("Faieled to fetch events");
+          throw new Error("Failed to fetch events");
         }
         const data = await res.json();
         setEvents(data);
@@ -78,11 +83,11 @@ const EventProvider = ({ children }) => {
       } catch (err) {
         setError(err.message);
         //stop loader
-        setIsLoading(false);
+       // setIsLoading(false);
       }
-      // finally{
-      //   setIsLoading(false);
-      // }
+      finally{
+         setIsLoading(false);
+      }
     };
     fetchEvents();
   }, []);
@@ -123,13 +128,13 @@ const EventProvider = ({ children }) => {
         handleSubmit,
         handleClearSearch,
         showEventList,
+        // setShowEventList,
         selectedLocation,
         setSelectedLocation,
         selectedDate,
         setSelectedDate,
         selectedType,
         setSelectedType,
-        // setShowEventList,
       }}
     >
       {children}

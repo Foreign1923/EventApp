@@ -1,15 +1,20 @@
 "use client";
 
-import EventList from "@/components/Events/EventList";
-import Hero from "@/components/Hero";
-// import EventProvider from "@/contexts/EventProviderWrapper";
-import { EventContext } from "@/contexts/EventContext";
-
 import React, { useContext } from "react";
+import { EventContext } from "@/contexts/EventContext";
+// import EventProvider from "@/contexts/EventProviderWrapper";
+
+
+
+import Hero from "@/components/Hero";
+import EventList from "@/components/Events/EventList";
+import UpcomingEvents from "@/components/UpcomingEvents";
+import RecommendedEvents from "@/components/RecommendedEvents";
+import DownloadApp from "@/components/DownloadApp";
 // import { EventContext } from "../contexts/EventContext";
 
 const Home = () => {
-  const { showEventList, handleClearSearch } = useContext(EventContext);
+  const { showEventList } = useContext(EventContext);
 
   return (
     <div>
@@ -27,11 +32,11 @@ const Home = () => {
         <div>
           <div className="container mx-auto"></div>
           {/* upcoming events slider */}
-          <div> Upcoming Events Slider </div>
+          <UpcomingEvents />
           {/* download app section */}
-          <div> Download App Section </div>
+          <DownloadApp />
           {/* reccomended events slider */}
-          <div> Recommended Events Slider </div>
+          <RecommendedEvents />
         </div>
       )}
 

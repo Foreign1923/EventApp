@@ -46,7 +46,11 @@ const Hero = () => {
         </div>
       </div>
       {/* bg 1 */}
-      <div className="absolute bg-primary top-0 left-0 w-[50vw] h*full bg-hero_bg1"></div>
+      <div className="absolute bg-primary top-0 left-0 w-[50vw] h-full bg-hero_bg1
+      bg-blend-color-dodge bg-no-repeat bg-cover -z-10 opacity-50"></div>
+      {/* bg 2 */}
+      <div className="absolute bg-primary top-0 right-0 w-[50vw] h-full bg-hero_bg2
+      bg-blend-lighten bg-no-repeat bg-cover -z-10 opacity-50"></div>
     </section>
   );
 };

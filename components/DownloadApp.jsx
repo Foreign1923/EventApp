@@ -27,6 +27,7 @@ const DownloadApp = () => {
               src="/assets/download/app-store.svg"
               fill
               className="object-contain"
+              alt=""
             />
           </Link>
         
@@ -35,6 +36,7 @@ const DownloadApp = () => {
               src="/assets/download/google-play.svg"
               fill
               className="object-contain"
+              alt= ""
             />
           </Link>
         </div>

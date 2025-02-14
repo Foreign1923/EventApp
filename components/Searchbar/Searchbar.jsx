@@ -36,7 +36,8 @@ const Searchbar = () => {
       h-[54px] rounded-[40px] xl:rounded-full 
       bg-accent hover:bg-accent 
       transition-all flex items-center justify-center">
-        <BiRightArrowAlt className="text-3xl" />
+        <BiRightArrowAlt className="text-3xl" 
+        type="button" />
       </button>
     </div>
   );

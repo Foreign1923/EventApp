@@ -47,10 +47,12 @@ const Footer = () => {
               className="pl-8 w-full h-[60px] rounded-full outline-none
                 placeholder:text-primary/80 text-primary text-sm"
             />
+            
             <button
               className="bg-secondary hover:bg-secondary-hover 
                 transition-all w-[114px] h-[52px] rounded-full text-sm uppercase 
                 absolute right-1"
+                type="button"
             >
               Join
             </button>

@@ -43,17 +43,17 @@ const RecommendedEvents = () => {
           modules={[Pagination]}
           className="w-full h-[500px]"
         >
-          {/* {filterRecommendedEvents.map((event, index) => {
-            <SwiperSlide key={index}>
+          {/* {filterRecommendedEvents.map((event, index) => (
+            <SwiperSlide key={index} className="select-none">
               <Link href={""}>
                 <Event event={event} />
               </Link>
             </SwiperSlide>;
-          })} */}
+          ))} */}
           {filterRecommendedEvents.map((event,index)=>(
             <SwiperSlide key={index} className="select-none">
-                <Link href={""}>
-                <Event event={event}/>
+              <Link href={`/event/${event.id}`}>
+              <Event event={event}/>
                 </Link>
             </SwiperSlide>
           ))}

@@ -18,8 +18,8 @@ const Header = () => {
           />
           </Link>
           <div className="flex gap-4">
-          <button className="btn btn-tertiary">Sign in</button>
-          <button className="btn btn-accent">Sign up</button>
+          <button className="btn btn-tertiary" type="button">Sign in</button>
+          <button className="btn btn-accent" type="button">Sign up</button>
           </div>
         </div>
       </div>
